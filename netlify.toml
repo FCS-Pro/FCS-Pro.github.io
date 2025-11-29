@@ -4,7 +4,6 @@
 
 [context.production.environment]
   NODE_VERSION = "20"
-  # Đảm bảo dùng Webpack (ổn định) thay vì Turbopack
   NEXT_PRIVATE_TURBOPACK = "false" 
 
 [[plugins]]
