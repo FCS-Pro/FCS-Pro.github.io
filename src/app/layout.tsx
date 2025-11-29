@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Orbitron } from "next/font/google";
+import { Inter, Orbitron } from "next/font/google"; // Dùng font chuẩn Google
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
+// Cấu hình Inter (cho văn bản thường)
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter" 
+});
+
+// Cấu hình Orbitron (cho tiêu đề Cyberpunk)
+const orbitron = Orbitron({ 
+  subsets: ["latin"], 
+  variable: "--font-orbitron",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Autonomy OS | The Operating System for Machines",
@@ -17,6 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* Nạp biến font vào Body */}
       <body className={`${inter.variable} ${orbitron.variable} bg-deep-black text-white antialiased`}>
         {children}
       </body>
