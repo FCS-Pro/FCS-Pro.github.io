@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import os
+
+code = r"""import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 
@@ -23,3 +25,9 @@ export default function RootLayout({
     </html>
   );
 }
+"""
+
+with open("src/app/layout.tsx", "w") as f:
+    f.write(code)
+
+print("SUCCESS: layout.tsx fixed! Removed Geist, added Cyberpunk fonts.")
