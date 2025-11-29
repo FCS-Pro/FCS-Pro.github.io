@@ -4,7 +4,8 @@
 
 [context.production.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
+  # Đảm bảo dùng Webpack (ổn định) thay vì Turbopack
+  NEXT_PRIVATE_TURBOPACK = "false" 
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
